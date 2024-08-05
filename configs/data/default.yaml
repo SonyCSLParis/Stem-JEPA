@@ -17,7 +17,7 @@ dataloader:
 
 transform:
   _target_: src.data.mix.ToLMS
-  sr: ${data.dataset_kwargs.sample_rate}
+  sr: ${data.dataset.sample_rate}
   n_fft: 400
   win_length: 400
   hop_length: 160

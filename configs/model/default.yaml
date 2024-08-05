@@ -22,7 +22,7 @@ criterion:
 optimizer:
   _target_: torch.optim.AdamW
   _partial_: true
-  lr: ${effective_lr:${model.base_lr},${data.dataloader_kwargs.batch_size}}
+  lr: ${effective_lr:${model.base_lr},${data.dataloader.batch_size}}
   weight_decay: 0.05
   betas:
     - 0.9

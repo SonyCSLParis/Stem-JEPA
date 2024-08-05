@@ -190,10 +190,10 @@ class MixStemsDatamodule(LightningDataModule):
         self.dataset_kwargs = dataset
 
         # get batch size per device
-        devices = dataloader_kwargs.pop("devices", 1)
+        devices = dataloader.pop("devices", 1)
         if not isinstance(devices, int):
             devices = len(devices)
-        batch_size = dataloader_kwargs.pop("batch_size", 256) // devices
+        batch_size = dataloader.pop("batch_size", 256) // devices
 
         self.dataloader_kwargs = dataloader
         self.dataloader_kwargs["batch_size"] = batch_size

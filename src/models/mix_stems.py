@@ -1,13 +1,10 @@
 from copy import deepcopy
 from typing import Any, Dict, Tuple
 
-import wandb
-
 import torch
 from lightning import LightningModule
 
 from src.callbacks.ma_update import MAWeightUpdate
-from src.utils.entropy import compute_batch_entropy
 
 
 class MixStemsModule(LightningModule):

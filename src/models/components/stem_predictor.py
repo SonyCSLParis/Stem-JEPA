@@ -64,15 +64,7 @@ class MixEncoder(VisionTransformer):
         batch_size, freq_patches, time_patches, embed_dim = x.size()
 
         # add pos embed w/o cls token
-        if self.time_pos_encoding.startswith("abs"):
-            if self.shift_pos_encoding and self.pos_embed.size(-2) > time_patches:
-                time_shift = torch.randint(self.pos_embed.size(-2) - time_patches, ())
-            else:
-                time_shift = 0
-
-            x = x + self.pos_embed[:, :, time_shift: time_shift + time_patches, :]
-        else:
-            x = x + self.pos_embed
+        x = x + self.pos_embed[:, :, :time_patches, :]
 
         original_shape = x.size()
 
