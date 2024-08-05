@@ -3,6 +3,7 @@ defaults:
 
 dataset:
   data_path: ${paths.data_dir}/my_dataset
+  sample_rate: 16000
 
 transform:
   norm_stats:
