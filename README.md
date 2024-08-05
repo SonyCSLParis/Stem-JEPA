@@ -2,7 +2,7 @@
 
 This repository contains the code of the [Stem-JEPA paper](), which has been accepted at [ISMIR 2024](https://ismir2024.ismir.net/).
 
-![model.png](https://github.com/SonyCSLParis/audio-representations/blob/master/images/model.png)
+![model.png](https://github.com/SonyCSLParis/Stem-JEPA/blob/master/images/model.png)
 
 ## Setup
 
