@@ -1,0 +1,14 @@
+dir: ${paths.log_dir}
+exclude:
+  - callbacks.*
+  - data.dataloader.num_workers
+  - extras.*
+  - logger.*
+  - model.compile
+  - paths.*
+  - trainer.accelerator
+  - trainer.devices
+  - trainer.check_val_every_n_epoch
+  - trainer.default_root_dir
+  - trainer.min_epochs
+git_save: false

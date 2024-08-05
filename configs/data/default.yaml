@@ -1,0 +1,34 @@
+_target_: src.data.mix.MixStemsDatamodule
+
+dataset:
+  data_path: ???
+  duration: ${eval:${model.encoder.img_size[1]} / 100}
+  sample_rate: 16000
+  silence_threshold: 0.1
+  num_sources_context: uniform
+  num_trials: 10
+
+dataloader:
+  batch_size: 256
+  num_workers: 32
+  persistent_workers: true
+  pin_memory: true
+  devices: ${trainer.devices}
+
+transform:
+  _target_: src.data.mix.ToLMS
+  sr: ${data.dataset_kwargs.sample_rate}
+  n_fft: 400
+  win_length: 400
+  hop_length: 160
+  n_mels: 80
+  fmin: 50
+  fmax: 8000
+  center: true
+  power: 2
+  verbose: false
+  norm_stats:
+    - -9.453
+    - 3.569
+
+local_dir: false

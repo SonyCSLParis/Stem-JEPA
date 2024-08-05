@@ -1,0 +1,10 @@
+defaults:
+  - default
+
+dataset:
+  data_path: ${paths.data_dir}/my_dataset
+
+transform:
+  norm_stats:
+    - 0.
+    - 1.

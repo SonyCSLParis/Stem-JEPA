@@ -1,0 +1,11 @@
+# https://lightning.ai/docs/pytorch/stable/api/lightning.pytorch.callbacks.ModelCheckpoint.html
+
+eval_checkpoint:
+  _target_: src.callbacks.evar.EVARCallback
+  dirpath: ${paths.output_dir}/checkpoints # directory to save the model file
+  verbose: false # verbosity mode
+  save_last: true # additionally always save an exact copy of the last checkpoint to a file last.ckpt
+  save_top_k: 0 # save k best models (determined by above metric)
+  save_weights_only: false # last checkpoint should be resumable
+  every_n_epochs: 10 # number of epochs between checkpoints
+  save_on_train_epoch_end: null # whether to run checkpointing at the end of the training epoch or the end of validation

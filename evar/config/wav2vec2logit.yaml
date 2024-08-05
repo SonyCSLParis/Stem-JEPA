@@ -1,0 +1,14 @@
+# AR parameters such as FFT parameters.
+audio_repr: ar_wav2vec2.AR_Wav2Vec2Logit
+feature_d: 32
+sample_rate: 16000
+temporal_pooling_type: mean # `mean+max` severely degrades performances on some tasks such as VC1. We set the `mean` for wav2vec2.
+
+# Training parameters.
+batch_size: 256
+lr_lineareval: 0.0003
+report_per_epochs: 20
+early_stop_epochs: 20
+
+# Model specific parameters.
+wav2vec_model: facebook/wav2vec2-large-960h-lv60

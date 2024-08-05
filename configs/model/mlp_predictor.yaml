@@ -1,0 +1,18 @@
+defaults:
+  - default
+
+predictor:
+  _target_: src.models.components.stem_predictor.MlpPredictor
+  num_sources: 4
+  embed_dim: ${model.encoder.embed_dim}
+  hidden_dims:
+    - 1024
+    - 1024
+    - 1024
+    - 1024
+    - 1024
+  activation_layer:
+    _target_: torch.nn.ReLU
+    _partial_: true
+    inplace: true
+  conditioning: concat

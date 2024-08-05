@@ -1,0 +1,46 @@
+_target_: src.models.mix_stems.MixStemsModule
+
+encoder:
+  _target_: src.models.components.stem_predictor.MixEncoder
+  img_size:
+    - 80
+    - 800
+  in_chans: 1
+  patch_size: 16
+  embed_dim: 768
+  depth: 12
+  num_heads: 12
+  mlp_ratio: 4.
+
+predictor: ???
+
+criterion:
+  _target_: src.models.components.loss.Loss
+  loss_type: norm_mse
+  norm_pix_loss: true
+
+optimizer:
+  _target_: torch.optim.AdamW
+  _partial_: true
+  lr: ${effective_lr:${model.base_lr},${data.dataloader_kwargs.batch_size}}
+  weight_decay: 0.05
+  betas:
+    - 0.9
+    - 0.95
+
+scheduler:
+  _target_: src.utils.scheduler.LinearWarmupCosineAnnealingLR
+  _partial_: true
+  warmup_epochs: 250
+
+ma_callback:
+  _target_: src.callbacks.ma_update.MAWeightUpdate
+  initial_tau: 0.99995
+  final_tau: 0.99999
+  update_method: lin
+
+# base learning rate
+base_lr: 0.0003
+
+# compile model for faster training with pytorch 2.0
+compile: true

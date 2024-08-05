@@ -1,0 +1,16 @@
+# https://wandb.ai
+
+wandb:
+  _target_: lightning.pytorch.loggers.wandb.WandbLogger
+  save_dir: "${paths.output_dir}"
+  offline: false
+  id: ${dora:xp.sig}  # pass correct id to resume experiment!
+  name: ${dora:xp.sig}  # same name as id to have a nice match dora/w&b
+  project: Stem-JEPA
+  log_model: false # upload lightning ckpts
+  save_code: true
+  prefix: "" # a string to put at the beginning of metric keys
+  # entity: "" # set to name of your wandb team
+  group: ""
+  tags: []
+  job_type: ""

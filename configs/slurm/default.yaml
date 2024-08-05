@@ -1,0 +1,9 @@
+cpus_per_gpu: 32
+mem_per_gpu: null
+one_task_per_node: false
+setup:
+  - set -x
+  - echo $SUBMITIT_PREEMPT_SIGNAL
+  - export SUBMITIT_PREEMPT_SIGNAL=USR1
+  - echo $SUBMITIT_PREEMPT_SIGNAL
+time: 1200
