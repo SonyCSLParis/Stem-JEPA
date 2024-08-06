@@ -17,7 +17,7 @@ from lightning.pytorch.utilities import rank_zero_only
 
 
 class EVARCallback(ModelCheckpoint):
-    def __init__(self, *args, script_name: str = "./scripts/quick_eval.sh", **kwargs) -> None:
+    def __init__(self, *args, script_name: str = "./scripts/mir_quick_eval.sh", **kwargs) -> None:
         super(EVARCallback, self).__init__(*args, **kwargs)
 
         # attributes
