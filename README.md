@@ -52,7 +52,7 @@ We refer to the documentation of Hydra for more advanced usage.
 ### Launching jobs on a cluster
 
 We take advantage of Dora to launch jobs seamlessly on SLURM clusters.
-Adjust or override `slurm/defaul.yaml`, then use `dora launch -p <partition>` instead of `dora run`.
+Adjust or override `slurm/default.yaml`, then use `dora launch -p <partition>` instead of `dora run`.
 We refer to the documentation of Dora for more advanced usage, such as resuming experiment or grid searches.
 
 #### Copy data to compute node
@@ -66,17 +66,15 @@ To do so, just set `data.local_dir=true` in your command.
 If you use this paper in your own work, please cite [Stem-JEPA](https://arxiv.org/abs/2408.02514).
 ```
 @inproceedings{StemJEPA,
-address = {San Francisco},
-archivePrefix = {arXiv},
-arxivId = {2309.02265},
-author = {Riou, Alain and Lattner, Stefan and Hadjeres, Ga{\"{e}}tan and Anslow, Michael and Peeters, Geoffroy},
-booktitle = {Proceedings of the 25th International Society for Music Information Retrieval Conference},
-eprint = {2309.02265},
-month = {nov},
-pages = {535--544},
-publisher = {ISMIR},
-title = {{Stem-JEPA: A Joint-Embedding Predictive Architecture for Musical Stem Compatibility Estimation}},
-url = {https://doi.org/10.5281/zenodo.10265343},
-year = {2024}
+    address = {San Francisco},
+    archivePrefix = {arXiv},
+    arxivId = {2408.02514},
+    author = {Riou, Alain and Lattner, Stefan and Hadjeres, Ga{\"{e}}tan and Anslow, Michael and Peeters, Geoffroy},
+    booktitle = {Proceedings of the 25th International Society for Music Information Retrieval Conference},
+    eprint = {2408.02514},
+    month = {nov},
+    publisher = {ISMIR},
+    title = {{Stem-JEPA: A Joint-Embedding Predictive Architecture for Musical Stem Compatibility Estimation}},
+    year = {2024}
 }
 ```
