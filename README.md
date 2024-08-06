@@ -1,6 +1,6 @@
 # Joint Embedding Predictive Architecture for Musical Stem Compatibility Estimation
 
-This repository contains the code of the [Stem-JEPA paper](), which has been accepted at [ISMIR 2024](https://ismir2024.ismir.net/).
+This repository contains the code of the [Stem-JEPA paper](https://arxiv.org/abs/2408.02514), which has been accepted at [ISMIR 2024](https://ismir2024.ismir.net/).
 
 ![model.png](https://github.com/SonyCSLParis/Stem-JEPA/blob/master/images/model.png)
 
@@ -63,7 +63,7 @@ To do so, just set `data.local_dir=true` in your command.
 
 ## Cite
 
-If you use this paper in your own work, please cite Stem-JEPA.
+If you use this paper in your own work, please cite [Stem-JEPA](https://arxiv.org/abs/2408.02514).
 ```
 @inproceedings{StemJEPA,
 address = {San Francisco},
